@@ -17,18 +17,17 @@ public class 회사에있는사람 {
             if (string[1].equals("enter")){
                 enterList.add(string[0]);
             }
-            // else if (string[1].equals("leave")){
             else {
                 enterList.remove(string[0]);
             }
         }
 
-        // Collections.sort(enterList, Collections.reverseOrder());
-
         for(String enter : enterList.descendingSet())
         {
             System.out.println(enter);
         }
+
+        scanner.close();
 
     }
     
