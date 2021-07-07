@@ -1,18 +1,20 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
-import java.util.Scanner;
 
 public class 전화번호목록 {
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException{
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        int length = scanner.nextInt();
+        int length = Integer.parseInt(bufferedReader.readLine());
         List<String> arrayList = new ArrayList<>();
 
         for (int i = 0; i < length; i++){
-            int phoneCount = scanner.nextInt();
+            int phoneCount = Integer.parseInt(bufferedReader.readLine());
             String answer = "YES";
             for (int j = 0; j < phoneCount; j++){
-                arrayList.add(scanner.next());
+                arrayList.add(bufferedReader.readLine());
             }
 
             Collections.sort(arrayList, Comparator.comparing(String::length));
@@ -38,8 +40,7 @@ public class 전화번호목록 {
             arrayList.clear();
         }
 
-        scanner.close();
-        
+        bufferedReader.close();
     }
     
 }
