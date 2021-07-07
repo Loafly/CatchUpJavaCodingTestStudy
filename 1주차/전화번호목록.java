@@ -1,11 +1,14 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.*;
 
 public class 전화번호목록 {
     public static void main(String[] args) throws IOException{
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int length = Integer.parseInt(bufferedReader.readLine());
         List<String> arrayList = new ArrayList<>();
@@ -17,11 +20,9 @@ public class 전화번호목록 {
                 arrayList.add(bufferedReader.readLine());
             }
 
-            Collections.sort(arrayList, Comparator.comparing(String::length));
-
             for (int j = 0; j < arrayList.size() - 1; j++){
                 for (int k = j + 1; k < arrayList.size(); k++){
-                    if(arrayList.get(k).startsWith(arrayList.get(j))){
+                    if(arrayList.get(k).startsWith(arrayList.get(j)) || arrayList.get(j).startsWith(arrayList.get(k))){
                         answer = "NO";
                     }
 
@@ -35,11 +36,13 @@ public class 전화번호목록 {
                 }
             }
 
-            System.out.println(answer);
+            bufferedWriter.write(answer + "\n");
 
             arrayList.clear();
         }
 
+        bufferedWriter.flush();
+        bufferedWriter.close();
         bufferedReader.close();
     }
     
