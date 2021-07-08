@@ -20,18 +20,13 @@ public class 전화번호목록 {
                 arrayList.add(bufferedReader.readLine());
             }
 
-            for (int j = 0; j < arrayList.size() - 1; j++){
-                for (int k = j + 1; k < arrayList.size(); k++){
-                    if(arrayList.get(k).startsWith(arrayList.get(j)) || arrayList.get(j).startsWith(arrayList.get(k))){
-                        answer = "NO";
-                    }
+            Collections.sort(arrayList);
 
-                    if (answer.equals("NO")){
-                        break;
-                    }
-                }
-                
-                if (answer.equals("NO")){
+            for (int j = 1; j < arrayList.size(); j++){
+                String currentString = arrayList.get(j);
+                String preString = arrayList.get(j - 1);
+                if(currentString.length() > preString.length() && currentString.startsWith(preString)){
+                    answer = "NO";
                     break;
                 }
             }

@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch 가장긴문자열",
+            "request": "launch",
+            "mainClass": "가장긴문자열",
+            "projectName": "CatchUpJavaCodingTestStudy_fb2c5987"
+        },
+        {
+            "type": "java",
+            "name": "Launch 그릇",
+            "request": "launch",
+            "mainClass": "그릇",
+            "projectName": "CatchUpJavaCodingTestStudy_fb2c5987"
+        },
+        {
+            "type": "java",
+            "name": "Launch 문자열",
+            "request": "launch",
+            "mainClass": "문자열",
+            "projectName": "CatchUpJavaCodingTestStudy_fb2c5987"
+        },
+        {
+            "type": "java",
+            "name": "Launch 전화번호목록",
+            "request": "launch",
+            "mainClass": "전화번호목록",
+            "projectName": "CatchUpJavaCodingTestStudy_fb2c5987"
+        },
+        {
+            "type": "java",
+            "name": "Launch 회사에있는사람",
+            "request": "launch",
+            "mainClass": "회사에있는사람",
+            "projectName": "CatchUpJavaCodingTestStudy_fb2c5987"
+        }
+    ]
+}
