@@ -1,15 +1,17 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class 문자열 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // 
-        Scanner scanner = new Scanner(System.in);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         
-        int length = scanner.nextInt();
+        int length = Integer.parseInt(bufferedReader.readLine());
 
         for (int i = 0; i < length ; i++){
             String string = new String();
-            string = scanner.next();
+            string = bufferedReader.readLine();
             
             char start = string.charAt(0);
             char end = string.charAt(string.length() - 1);
@@ -17,7 +19,7 @@ public class 문자열 {
             System.out.println(Character.toString(start) + Character.toString(end));
         }
 
-        scanner.close();
+        bufferedReader.close();
 
     }
 }

@@ -1,10 +1,12 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class 그릇 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        String string = scanner.next();
+        String string = bufferedReader.readLine();
 
         int answer = 10;
 
@@ -19,6 +21,7 @@ public class 그릇 {
 
         System.out.println(answer);
 
-        scanner.close();
+        bufferedReader.close();
+
     }
 }
