@@ -26,6 +26,8 @@ public class 숫자판점프 {
         }
 
         System.out.println(answer_set.size());
+
+        bufferedReader.close();
         
     }
 
