@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch 숫자판점프",
+            "request": "launch",
+            "mainClass": "숫자판점프",
+            "projectName": "CatchUpJavaCodingTestStudy_5d4acdc9"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

@@ -10,8 +10,6 @@ public class 가장긴문자열 {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int length = Integer.parseInt(bufferedReader.readLine());
-
         String string = bufferedReader.readLine();
 
         //Suffix Array : index번째에서 시작하는 문자열 string의 접미사
