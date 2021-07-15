@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch 문제집",
+            "request": "launch",
+            "mainClass": "문제집",
+            "projectName": "2주차_fc5bfd18"
+        },
+        {
+            "type": "java",
+            "name": "Launch 상근이의여행",
+            "request": "launch",
+            "mainClass": "상근이의여행",
+            "projectName": "2주차_fc5bfd18"
+        },
+        {
+            "type": "java",
+            "name": "Launch 숫자판점프",
+            "request": "launch",
+            "mainClass": "숫자판점프",
+            "projectName": "2주차_fc5bfd18"
+        },
+        {
+            "type": "java",
+            "name": "Launch 친구팰린드롬",
+            "request": "launch",
+            "mainClass": "친구팰린드롬",
+            "projectName": "2주차_fc5bfd18"
+        }
+    ]
+}
