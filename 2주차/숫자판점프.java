@@ -11,8 +11,8 @@ public class 숫자판점프 {
 
         int length = 5;
 
-        String[][] matrix = new String[5][5];
-        Set<String> answer_set = new HashSet<String>();
+        String[][] matrix = new String[length][length];
+        Set<String> answerSet = new HashSet<String>();
         String answer = new String();
         
         for(int i = 0; i < length; i++){
@@ -21,42 +21,42 @@ public class 숫자판점프 {
 
         for(int i = 0; i < length; i++){
             for(int j = 0; j < length; j++){
-                DFS(i, j, 0, matrix, answer, answer_set);
+                DFS(i, j, 0, matrix, answer, answerSet);
             }
         }
 
-        System.out.println(answer_set.size());
+        System.out.println(answerSet.size());
 
         bufferedReader.close();
         
     }
 
-    public static void DFS(int row_index, int col_index, int current_count, String[][] matrix, String answer, Set<String> answer_set){
+    public static void DFS(int row_index, int col_index, int current_count, String[][] matrix, String answer, Set<String> answerSet){
 
         answer += matrix[row_index][col_index];
         current_count ++;
         
         if(current_count == 6) {
-            answer_set.add(answer);
+            answerSet.add(answer);
         } else {
             // 위
             if(row_index > 0){
-                DFS(row_index - 1, col_index, current_count, matrix, answer, answer_set);
+                DFS(row_index - 1, col_index, current_count, matrix, answer, answerSet);
             }
 
             // 아래
             if(row_index < 4){
-                DFS(row_index + 1, col_index, current_count, matrix, answer, answer_set);
+                DFS(row_index + 1, col_index, current_count, matrix, answer, answerSet);
             }
 
             // 왼쪽
             if(col_index > 0){
-                DFS(row_index, col_index - 1, current_count, matrix, answer, answer_set);
+                DFS(row_index, col_index - 1, current_count, matrix, answer, answerSet);
             }
 
             // 오른쪽
             if(col_index < 4){
-                DFS(row_index, col_index + 1, current_count, matrix, answer, answer_set);
+                DFS(row_index, col_index + 1, current_count, matrix, answer, answerSet);
             }
 
         }

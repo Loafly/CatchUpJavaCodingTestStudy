@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class 친구팰린드롬 {
     public static void main(String[] args) throws IOException {
@@ -64,7 +63,7 @@ public class 친구팰린드롬 {
         }
 
         System.out.println(answer);
-          
+        
     }
 }
 

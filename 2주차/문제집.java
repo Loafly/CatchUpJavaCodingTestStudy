@@ -15,7 +15,7 @@ public class 문제집 {
         int eaxmCount = Integer.parseInt(temp_string[0]);
         int infoCount = Integer.parseInt(temp_string[1]);
 
-        //연걸 리스트 생성
+        //연결 리스트 생성
         ArrayList<ArrayList<Integer>> arrayList = new ArrayList<>();
         int[] indegree = new int[eaxmCount + 1];
 
@@ -44,7 +44,7 @@ public class 문제집 {
             answer.append(now).append(" ");
             ArrayList<Integer> nodes = arrayList.get(now);
             for(int node : nodes) {
-                indegree[node] -= 1;
+                indegree[node] --;
 
                 if(indegree[node] == 0) {
                     pq.offer(node);
