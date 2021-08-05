@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class 점수계산 {
@@ -13,20 +12,33 @@ public class 점수계산 {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int length = 8;
+        int sumLength = 5;
+        int sum = 0;
 
-        ArrayList<int[]> arrayList = new ArrayList<int[]>();
+        ArrayList<Exam> arrayList = new ArrayList<Exam>();
+        ArrayList<Exam> arrayListReal = new ArrayList<Exam>();
 
         for(int i = 0; i < length; i++){
-            int[] arr = new int[2];
-            arr[0] = Integer.parseInt(bufferedReader.readLine());
-            arr[1] = i;
-            arrayList.add(arr);
+            Exam exam = new Exam(Integer.parseInt(bufferedReader.readLine()), i);
+            arrayList.add(exam);
         }
-    }
 
+        Collections.sort(arrayList);
+
+        for(int i = arrayList.size() - 1; i > arrayList.size() - sumLength - 1; i--){
+            arrayListReal.add(arrayList.get(i));
+        }
+
+        for(int i = 0; i < sumLength; i++){
+            sum += arrayListReal.get(i).getScore();
+        }
+
+        bufferedWriter.write(sum + "\n");
+        bufferedWriter.flush();
+    }
 }
 
-public class Exam implements Comparable<Exam>{
+class Exam implements Comparable<Exam>{
     private int score;
     private int index;
 
@@ -45,15 +57,12 @@ public class Exam implements Comparable<Exam>{
     @Override
     public int compareTo(Exam exam) {
         // TODO Auto-generated method stub
-        if(this.score < exam.score){
+        if(this.index < exam.index){
             return -1;
-        } else if(this.score == exam.score){
+        } else if(this.index == exam.index){
             return 0;
         } else{
             return 1;
         }
-        
-        return this.score;
     }
-
 }
