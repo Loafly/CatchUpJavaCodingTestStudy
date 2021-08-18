@@ -33,13 +33,6 @@ public class LCS {
                 }
             }
         }
-        for(int i = 1; i < firstString.length() + 1; i++){
-            for(int j = 1; j < secondString.length() + 1; j++){
-                System.out.print(LCS[i][j]);
-            }
-            System.out.println();
-        }
-
 
         bufferedWriter.write(String.valueOf(answer));
         bufferedWriter.flush();

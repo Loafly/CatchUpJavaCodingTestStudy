@@ -3,7 +3,9 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
@@ -19,7 +21,7 @@ public class 경찰차{
         int police2CurrentIndex = size * 10 + size;
         int totalMove = 0;
         Queue<Integer> resultQueue = new LinkedList<>();
-        Queue<Integer> caseQueue = new LinkedList<>();
+        ArrayList<Integer> eventList = new ArrayList<Integer>();
 
         int length = Integer.parseInt(bufferedReader.readLine());
 
@@ -29,8 +31,10 @@ public class 경찰차{
             int y = Integer.parseInt(stk.nextToken());
             int x = Integer.parseInt(stk.nextToken());
 
-            caseQueue.offer(y * 10 + x);
+            eventList.add(y * 10 + x);
         }
+
+        int[][] dp = new int[eventList.size()][eventList.size()];
 
         // while(!caseQueue.isEmpty()){
         //     int value = caseQueue.poll();
@@ -62,9 +66,26 @@ public class 경찰차{
         bufferedReader.close();
     }
 
-    static void dfs(Queue<Integer> queue){
+    // static int dfs(int[][] dp, int eventIndex, ArrayList<Integer> eventList ) {
+	// 	if(eventIndex > eventList.size()) {
+    //         return 0;
+    //     }
 
-    }
+    //     int value = eventList.get(eventIndex);
+    //     int x = value / 10;
+    //     int y = value % 10;
+		
+	// 	if(dp[x][y] != 0) {
+    //         return dp[x][y];
+    //     } 
+
+	// 	int first = dfs(dp, eventIndex + 1, eventList) + distance();
+	// 	int second = dfs(dp, eventIndex + 1, eventList) + distance(2, second, event);
+		
+	// 	dp[first][second] = Math.min(first, second);
+		
+	// 	return dp[first][second];
+	// }
 
     static double getDistance(int x, int y, int x1, int y1) {
 		double d;
